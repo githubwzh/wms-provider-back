@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="file" value="${wms.log.path}/console-error.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{MM-dd HH:mm:ss.S}:%p %C{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="managerErrorAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="file" value="${wms.log.path}/manager-error.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+        </layout>
+    </appender>
+
+    <appender name="serviceErrorAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <param name="file" value="${wms.log.path}/service-error.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%7r] %6p - %30.30c - %m \n" />
+        </layout>
+    </appender>
+
+    <logger name="service-error" additivity="false">
+        <level value="${wms.log.level}"/>
+        <appender-ref ref="serviceErrorAppender"/>
+    </logger>
+
+    <logger name="manager-error" additivity="false">
+        <level value="${wms.log.level}"/>
+        <appender-ref ref="managerErrorAppender"/>
+    </logger>
+
+    <logger name="WMS_DEBUG">
+        <level value="${wms.log.level}"/>
+    </logger>
+
+    <logger name="com.womai.wms.rf.launcher.Provider">
+        <level value="INFO"/>
+    </logger>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</log4j:configuration>

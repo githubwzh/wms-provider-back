@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+       default-lazy-init="true">
+
+    <bean id="userInterceptor" class="com.womai.wms.rf.manager.auth.interceptor.UserAndAuthInterceptor"/>
+    <!--空输入拦截器-->
+    <bean id="nullInputInterceptor" class="com.womai.wms.rf.manager.auth.interceptor.NullInputInterceptor"/>
+    <!--<bean id="keyInterceptor" class="com.womai.wms.rf.manager.auth.interceptor.KeyInterceptor"/>-->
+
+    <aop:config proxy-target-class="true">
+        <!--切入点-->
+        <aop:pointcut id="activeTarget" expression="execution(* com.womai.wms.rf.manager.window..*.channelActive(..))"/>
+        <!--在该切入点使用自定义拦截器-->
+        <aop:advisor id="userRoleInterceptor" pointcut-ref="activeTarget" advice-ref="userInterceptor" order="0"/>
+
+        <!--&lt;!&ndash;handler数据读取的后置拦截&ndash;&gt;-->
+        <!--<aop:aspect id="keyAop" ref="keyInterceptor">-->
+        <!--<aop:pointcut id="keyTarget" expression="execution(* com.womai.wms.rf.manager..*.channelRead(..))"/>-->
+        <!--<aop:before method="checkKeyCode" pointcut-ref="keyTarget"/>-->
+        <!--</aop:aspect>-->
+
+
+    </aop:config>
+
+    <aop:config proxy-target-class="true">
+        <!--空输入拦截。回车的时候，会多一个空输入，对应KeyEnum中的NUT_0，拦截此输入，不进行处理-->
+        <aop:pointcut id="nullInputactiveTarget" expression="execution(* com.womai.wms.rf.manager..*.channelRead(..))"/>
+        <aop:advisor id="nullInterceptor" pointcut-ref="nullInputactiveTarget" advice-ref="nullInputInterceptor" order="0"/>
+    </aop:config>
+
+</beans>

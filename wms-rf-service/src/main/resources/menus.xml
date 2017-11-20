@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menus>
+    <!--此文件不再用于显示菜单，只作为菜单名称、url、顺序的参考-->
+    <!--权限系统auth_authority表，name对应authname字段，title对应authdesc字段，location对应url字段-->
+    <Menu name="main" title="main">
+        <Item name="RF-goodsInfo" title="商品信息维护" location="goodsInfoManager"/>
+        <Item name="RF-instock" title="入库管理"  >
+            <Item name="RF-rfCginASN" title="采购入库单" location="purchaseInstockManager" />
+            <Item name="RF-rfCgoutASN" title="意向收货单" location="intentionInstockManager" />
+            <Item name="RF-rfCgoutConfirm" title="意向单过账" location="intentionPostingManager" />
+            <Item name="RF-instockCheckMenu" title="质检管理"  >
+                <Item name="RF-singleCheck" title="单一明细质检" location="instockPartCheckManager" />
+                <Item name="RF-allCheck" title="整单质检" location="instockCheckManager" />
+            </Item>
+        </Item>
+        <Item name="RF-transferMenu" title="交接管理" >
+            <Item name="RF-transfer" title="RF交接管理" location="preTransferShell" />
+            <Item name="RF-transferShip" title="出库确认" location="outstockConfirmManager" />
+            <Item name="RF-searchTransfer" title="查询交接单" location="queryTransOrderManager" />
+        </Item>
+        <Item name="RF-shelfOrder" title="上架移位" location="shelfOrderManager"></Item>
+        <Item name="RF-stockMove" title="移位管理" location="">
+            <Item name="RF-createStockMove" title="创建移位计划" location="createStockMoveManager" />
+            <Item name="RF-stockMoveOut" title="RF移出" location="stockMoveOutManager" />
+            <Item name="RF-stockMoveIn" title="RF移入" location="stockMoveInManager" />
+        </Item>
+        <Item name="RF-stockFreeze" title="RF冻结管理" location="">
+            <Item name="RF-freezeStockInfo" title="RF冻结" location="freezeStockInfoManager" />
+            <Item name="RF-unfreezeStockInfo" title="RF解冻" location="unfreezeStockInfoManager" />
+        </Item>
+        <Item name="RF-stockReplenish" title="RF补货管理" location="">
+            <Item name="RF-replenishMoveOut" title="补货移出" location="replenishMoveOutManager" />
+            <Item name="RF-replenishMoveIn" title="补货移入" location="replenishMoveInManager" />
+        </Item>
+        <Item name="RF-queryStockInfo" title="库存查询" location="">
+            <Item name="RF-queryStockInfoByBarcode" title="按商品查询" location="queryStockInfoByBarcodeManager" />
+            <Item name="RF-queryStockInfoByWhsCode" title="按库位查询" location="queryStockInfoByWhsCodeManager" />
+        </Item>
+        <Item name="RF-outstockPickOrder" title="拣货管理" location="outstockPickOrderManager"></Item>
+        <Item name="RF-inventory" title="盘点管理" location="inventoryManager"></Item>
+        <Item name="RF-modifyPwd" title="密码修改" location="modifyPwdShellManager"></Item>
+        <Item name="RF-switchWarehouse" title="仓库切换" location="switchWarehouseShellManager"></Item>
+    </Menu>
+</Menus>

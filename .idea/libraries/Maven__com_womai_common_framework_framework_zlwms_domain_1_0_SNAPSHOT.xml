@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.common.framework:framework-zlwms-domain:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/common/framework/framework-zlwms-domain/1.0-SNAPSHOT/framework-zlwms-domain-1.0-20150715.075408-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/common/framework/framework-zlwms-domain/1.0-SNAPSHOT/framework-zlwms-domain-1.0-20150715.075408-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/common/framework/framework-zlwms-domain/1.0-SNAPSHOT/framework-zlwms-domain-1.0-20150715.075408-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

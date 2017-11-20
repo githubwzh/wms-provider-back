@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.auth:auth-soa-common:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/auth/auth-soa-common/1.0-SNAPSHOT/auth-soa-common-1.0-20170621.135125-355.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/auth/auth-soa-common/1.0-SNAPSHOT/auth-soa-common-1.0-20170621.135125-355-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/auth/auth-soa-common/1.0-SNAPSHOT/auth-soa-common-1.0-20170621.135125-355-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

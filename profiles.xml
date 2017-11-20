@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profilesXml xmlns="http://maven.apache.org/PROFILES/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/PROFILES/1.0.0 http://maven.apache.org/xsd/profiles-1.0.0.xsd">
+
+    <profiles>
+
+        <profile>
+            <id>local</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>DEBUG</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.6.24.249</redis.host>
+                <redis.port>6379</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    wmsrfredis
+                    ]]>
+                </redis.password>
+
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.womaiwms.dev:2181,zoo2.womaiwms.dev:2181,zoo3.womaiwms.dev:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rflocal</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/dev</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <properties>
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.6.24.249</redis.host>
+                <redis.port>6379</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    wmsrfredis
+                    ]]>
+                </redis.password>
+
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.womaiwms.dev:2181,zoo2.womaiwms.dev:2181,zoo3.womaiwms.dev:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rfdev</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/dev</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>test</id>
+            <properties>
+
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.6.104.151</redis.host>
+                <redis.port>6481</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    a4b846c7b2f15ee66c04177d3444cb1716ceabe9088aa617dc855950e8858be
+                    ]]>
+                </redis.password>
+
+                <wms.velocity.macro.autoreload>true</wms.velocity.macro.autoreload>
+                <!--velocity的宏是否重新载入。生产环境要改为true -->
+                <wms.velocity.cache>false</wms.velocity.cache>
+                <wms.velocity.cache.time>10</wms.velocity.cache.time>
+
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.womaiwms.test:2181,zoo2.womaiwms.test:2181,zoo3.womaiwms.test:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rftest</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/test</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>pro</id>
+            <properties>
+
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.6.25.254</redis.host>
+                <redis.port>6482</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    cf491961f5ba2a2c22f529e5672cb82d5b83c455b83fac11f6309778e23b715d
+                    ]]>
+                </redis.password>
+
+
+                <!--velocity的宏是否重新载入。生产环境要改为false -->
+                <wms.velocity.macro.autoreload>false</wms.velocity.macro.autoreload>
+                <!--velocity的宏是否重新载入。生产环境要改为true -->
+                <wms.velocity.cache>true</wms.velocity.cache>
+                <wms.velocity.cache.time>10</wms.velocity.cache.time>
+
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <!-- <dubbo.registry.address>10.0.6.43:2181,10.0.6.44:2181,10.0.6.45:2181</dubbo.registry.address>-->
+                <dubbo.registry.address>zoo1.womaiwms.com:2181,zoo2.womaiwms.com:2181,zoo3.womaiwms.com:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rfpro</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/pro</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+
+            </properties>
+        </profile>
+
+        <profile>
+            <id>gztest</id>
+            <properties>
+
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.6.105.185</redis.host>
+                <redis.port>6379</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    foobared
+                    ]]>
+                </redis.password>
+
+                <wms.velocity.macro.autoreload>true</wms.velocity.macro.autoreload>
+                <!--velocity的宏是否重新载入。生产环境要改为true -->
+                <wms.velocity.cache>false</wms.velocity.cache>
+                <wms.velocity.cache.time>10</wms.velocity.cache.time>
+
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.gzwomaiwms.test:2181,zoo2.gzwomaiwms.test:2181,zoo3.gzwomaiwms.test:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rfgztest</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/gztest</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+
+            </properties>
+        </profile>
+
+        <profile>
+            <id>gzpro</id>
+            <properties>
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.45.4.108</redis.host>
+                <redis.port>6481</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    a64b846c7b2f15ee66c04177e3444cb1716oeabe9088aa617dc855950e8858be
+                    ]]>
+                </redis.password>
+                <!--velocity的宏是否重新载入。生产环境要改为false -->
+                <wms.velocity.macro.autoreload>false</wms.velocity.macro.autoreload>
+                <!--velocity的宏是否重新载入。生产环境要改为true -->
+                <wms.velocity.cache>true</wms.velocity.cache>
+                <wms.velocity.cache.time>10</wms.velocity.cache.time>
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.gzwomaiwms.com:2181,zoo2.gzwomaiwms.com:2181,zoo3.gzwomaiwms.com:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rfgzpro</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/gzpro</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>shpro</id>
+            <properties>
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.20.1.142</redis.host>
+                <redis.port>6481</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                    5e7b846c7b2f15ee66c04177d3444cb1716ceabe9088aa617dc855950e8858be
+                    ]]>
+                </redis.password>
+                <!--velocity的宏是否重新载入。生产环境要改为false -->
+                <wms.velocity.macro.autoreload>false</wms.velocity.macro.autoreload>
+                <!--velocity的宏是否重新载入。生产环境要改为true -->
+                <wms.velocity.cache>true</wms.velocity.cache>
+                <wms.velocity.cache.time>10</wms.velocity.cache.time>
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.shwomaiwms.com:2181,zoo2.shwomaiwms.com:2181,zoo3.shwomaiwms.com:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rfshpro</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/shpro</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>bjpro</id>
+            <properties>
+                <wms.struts.devMode>true</wms.struts.devMode>
+                <wms.rf.charset>UTF-8</wms.rf.charset>
+                <wms.log.level>ERROR</wms.log.level>
+                <wms.log.path>/opt/logs/resin/wms-rf/</wms.log.path>
+                <redis.host>10.10.2.49</redis.host>
+                <redis.port>6481</redis.port>
+                <redis.timeout>3600</redis.timeout>
+                <redis.password>
+                    <![CDATA[
+                            7e7b846c8b2f15ee66c04177d3666cb1716ceabe9088aa617dc855950e8858bf
+                    ]]>
+                </redis.password>
+                <!--velocity的宏是否重新载入。生产环境要改为false -->
+                <wms.velocity.macro.autoreload>false</wms.velocity.macro.autoreload>
+                <!--velocity的宏是否重新载入。生产环境要改为true -->
+                <wms.velocity.cache>true</wms.velocity.cache>
+                <wms.velocity.cache.time>10</wms.velocity.cache.time>
+                <dubbo.application.name>wms-rf</dubbo.application.name>
+                <dubbo.registry.address>zoo1.bjwomaiwms.com:2181,zoo2.bjwomaiwms.com:2181,zoo3.bjwomaiwms.com:2181</dubbo.registry.address>
+                <dubbo.registry.group>/dubbo/rfbjpro</dubbo.registry.group>
+                <dubbo.registry.group.uic>/dubbo/bjpro</dubbo.registry.group.uic>
+                <dubbo.registry.protocol>zookeeper</dubbo.registry.protocol>
+            </properties>
+        </profile>
+
+    </profiles>
+
+</profilesXml>

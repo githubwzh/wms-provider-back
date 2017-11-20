@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.wms.auth.client:wms-auth-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/wms/auth/client/wms-auth-api/1.0-SNAPSHOT/wms-auth-api-1.0-20170808.015523-208.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/wms/auth/client/wms-auth-api/1.0-SNAPSHOT/wms-auth-api-1.0-20170808.015523-208-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/wms/auth/client/wms-auth-api/1.0-SNAPSHOT/wms-auth-api-1.0-20170808.015523-208-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

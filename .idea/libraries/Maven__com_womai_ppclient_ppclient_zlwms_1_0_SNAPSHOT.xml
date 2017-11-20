@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.ppclient:ppclient-zlwms:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/ppclient/ppclient-zlwms/1.0-SNAPSHOT/ppclient-zlwms-1.0-20170112.073610-22.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/ppclient/ppclient-zlwms/1.0-SNAPSHOT/ppclient-zlwms-1.0-20170112.073610-22-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/ppclient/ppclient-zlwms/1.0-SNAPSHOT/ppclient-zlwms-1.0-20170112.073610-22-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://code.alibabatech.com/schema/dubbo
+		     http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+       default-lazy-init="true">
+
+    <!-- dubb配置注册信息分割线-->
+    <dubbo:application name="${dubbo.application.name}"/>
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"  group="${dubbo.registry.group}"/>
+    <dubbo:protocol  port="-1" />
+
+    <!-- wms-rfsoa服务-->
+    <!--基础信息-->
+    <dubbo:reference id="baseTransporterService" interface="com.womai.zlwms.rfsoa.api.service.base.BaseTransporterService" timeout="10000" check="false"/>
+    <dubbo:reference id="baseGoodsinfoService" interface="com.womai.zlwms.rfsoa.api.service.base.BaseGoodsinfoService" timeout="10000" check="false"/>
+    <dubbo:reference id="basePackaginginfoService" interface="com.womai.zlwms.rfsoa.api.service.base.BasePackaginginfoService" timeout="10000" check="false"/>
+    <dubbo:reference id="baseWarehouseInfoService" interface="com.womai.zlwms.rfsoa.api.service.base.BaseWarehouseInfoService" timeout="10000" check="false"/>
+
+    <!--入库-->
+    <dubbo:reference id="instockService" interface="com.womai.zlwms.rfsoa.api.service.instock.InstockService" timeout="10000" check="false"/>
+    <dubbo:reference id="instockReasonService" interface="com.womai.zlwms.rfsoa.api.service.instock.InstockReasonService" timeout="10000" check="false"/>
+    <dubbo:reference id="instockCheckDetailService" interface="com.womai.zlwms.rfsoa.api.service.instock.InstockCheckDetailService" timeout="10000" check="false"/>
+    <dubbo:reference id="instockShelfOrderService" interface="com.womai.zlwms.rfsoa.api.service.instock.InstockShelfOrderService" timeout="10000" check="false"/>
+
+
+
+    <!--出库-->
+    <dubbo:reference id="outStockTransOrderService" interface="com.womai.zlwms.rfsoa.api.service.outstock.OutStockTransOrderService" timeout="10000" check="false"/>
+    <dubbo:reference id="outstockPickOrderService" interface="com.womai.zlwms.rfsoa.api.service.outstock.OutstockPickOrderService" timeout="10000" check="false"/>
+    <dubbo:reference id="outstockZonepickOrderService" interface="com.womai.zlwms.rfsoa.api.service.outstock.OutstockZonepickOrderService" timeout="10000" check="false"/>
+
+    <!--库存-->
+    <dubbo:reference id="stockInfoService" interface="com.womai.zlwms.rfsoa.api.service.stock.StockInfoService" timeout="10000" check="false"/>
+    <dubbo:reference id="stockMoveService" interface="com.womai.zlwms.rfsoa.api.service.stock.StockMoveService" timeout="10000" check="false"/>
+    <dubbo:reference id="stockMoveOutService" interface="com.womai.zlwms.rfsoa.api.service.stock.StockMoveOutService" timeout="10000" check="false"/>
+
+    <!--补货-->
+    <dubbo:reference id="replenishMoveOutService" interface="com.womai.zlwms.rfsoa.api.service.stock.ReplenishMoveOutService" timeout="10000" check="false"/>
+    <dubbo:reference id="replenishMoveInService" interface="com.womai.zlwms.rfsoa.api.service.stock.ReplenishMoveInService" timeout="10000" check="false"/>
+
+    <!--盘点-->
+    <dubbo:reference id="inventoryService" interface="com.womai.zlwms.rfsoa.api.service.inventory.InventoryService" timeout="10000" check="false"/>
+
+    <!-- 加工-->
+    <dubbo:reference id="productShelfService" interface="com.womai.zlwms.rfsoa.api.service.workproduct.ProductShelfService" timeout="10000" check="false"/>
+
+    <!-- 集货-->
+    <dubbo:reference id="outstockPickupService" interface="com.womai.zlwms.rfsoa.api.service.outstock.OutstockPickupService" timeout="10000" check="false"/>
+    <dubbo:reference id="outstockCancleZonePickService" interface="com.womai.zlwms.rfsoa.api.service.outstock.OutstockCancleZonePickService" timeout="10000" check="false"/>
+    <!--退拣 -->
+    <dubbo:reference id="outStockCanclePackOrderService" interface="com.womai.zlwms.rfsoa.api.service.outstock.OutstockCanclePackOrderService" timeout="10000" check="false"/>
+    <!--person服务-->
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"  group="${dubbo.registry.group.uic}" id="personrf"/>
+    <dubbo:reference registry="personrf" id="adminWMPersonService" interface="com.womai.person.api.service.admin.AdminWMPersonService"
+                     check="false" timeout="60000"/>
+    <dubbo:reference registry="personrf" id="adminUserService" interface="com.womai.person.api.service.admin.AdminUserService"
+                     check="false" timeout="60000"/>
+
+    <!--auth服务-->
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"
+                    group="${dubbo.registry.group.uic}" id="authrf"/>
+    <dubbo:reference registry="authrf" id="authClientService"
+                     interface="com.womai.auth.ClientApi"
+                     check="false" timeout="60000"/>
+
+
+    <!-- <dubbo:reference registry="shch" id="authClientService" interface="com.womai.auth.ClientApi"  cache="false" timeout="5000" />-->
+    <!-- <dubbo:reference id="authClientService" interface="com.womai.auth.ClientApi" registry="test"  cache="false" timeout="5000" />-->
+
+</beans>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.womai.wms.rf</groupId>
+    <artifactId>wms-rf</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>wms-rf-service</module>
+        <module>wms-rf-common</module>
+        <module>wms-rf-domain</module>
+        <module>wms-rf-manager</module>
+        <module>wms-rf-remote</module>
+    </modules>
+
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://nexus.womai.dev/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://nexus.womai.dev/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+    </build>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <tool.util.version>1.0-SNAPSHOT</tool.util.version>
+        <tool.aop.version>1.0-SNAPSHOT</tool.aop.version>
+        <framework.dao.version>1.0-SNAPSHOT</framework.dao.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <commons.beanutils.version>1.8.3</commons.beanutils.version>
+        <commons.collections.version>3.2.1</commons.collections.version>
+        <commons.dbcp.version>1.3</commons.dbcp.version>
+        <commons.io.version>2.0.1</commons.io.version>
+        <aspectj.version>1.6.10</aspectj.version>
+        <ibatis.version>2.3.4.726</ibatis.version>
+        <jmock.version>2.5.1</jmock.version>
+        <junit.version>4.8.2</junit.version>
+        <jetty.version>6.1.26</jetty.version>
+        <jmock.version>2.5.1</jmock.version>
+        <jstl.version>1.1.2</jstl.version>
+        <junit.version>4.8.2</junit.version>
+        <jackson.version>1.5.5</jackson.version>
+        <log4j.version>1.2.16</log4j.version>
+        <slf4j.version>1.6.1</slf4j.version>
+        <spring.version>3.2.4.RELEASE</spring.version>
+        <servlet.version>2.5</servlet.version>
+        <mysql.version>5.1.27</mysql.version>
+        <org.json.version>20090211</org.json.version>
+        <dubbo.version>2.4.5</dubbo.version>
+        <dubbo.ext.version>1.0.0</dubbo.ext.version>
+        <zkclient.version>0.1</zkclient.version>
+        <javassist.version>3.11.0.GA</javassist.version>
+        <netty.version>4.0.23.Final</netty.version>
+        <mockito.version>1.9.5</mockito.version>
+        <guava.version>17.0</guava.version>
+        <jedis.version>2.8.1</jedis.version>
+    </properties>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.womai.zlwms.rfsoa</groupId>
+            <artifactId>zlwms-rfsoa-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.womai.zlwms.rfsoa</groupId>
+            <artifactId>zlwms-rfsoa-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.womai.auth</groupId>
+            <artifactId>auth-soa-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.womai.wms.auth.client</groupId>
+            <artifactId>wms-auth-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <!--因为person-soa中引用了webmvc模块导致exclusion的时候不能去掉，-->
+        <!--从而导致自动扫描注解失效，无法启动netty服务，所以在此处引用webmvc-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.womai.person</groupId>
+            <artifactId>person-wms-soa-api</artifactId>
+            <version>1.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.womai.common.framework</groupId>
+            <artifactId>framework-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons.beanutils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zkclient.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons.dbcp.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>xercesImpl</artifactId>
+                    <groupId>xerces</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-collections</artifactId>
+                    <groupId>commons-collections</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+</dependencies>
+
+</project>

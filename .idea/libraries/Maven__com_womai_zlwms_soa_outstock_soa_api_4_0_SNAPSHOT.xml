@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.zlwms.soa:outstock-soa-api:4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/zlwms/soa/outstock-soa-api/4.0-SNAPSHOT/outstock-soa-api-4.0-20171120.050336-629.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/zlwms/soa/outstock-soa-api/4.0-SNAPSHOT/outstock-soa-api-4.0-20171120.050336-629-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/zlwms/soa/outstock-soa-api/4.0-SNAPSHOT/outstock-soa-api-4.0-20171120.050336-629-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

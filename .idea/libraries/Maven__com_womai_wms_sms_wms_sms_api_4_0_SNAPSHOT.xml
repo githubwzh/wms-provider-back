@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.wms.sms:wms-sms-api:4.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/wms/sms/wms-sms-api/4.0-SNAPSHOT/wms-sms-api-4.0-20171120.025733-158.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/wms/sms/wms-sms-api/4.0-SNAPSHOT/wms-sms-api-4.0-20171120.025733-158-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/wms/sms/wms-sms-api/4.0-SNAPSHOT/wms-sms-api-4.0-20171120.025733-158-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

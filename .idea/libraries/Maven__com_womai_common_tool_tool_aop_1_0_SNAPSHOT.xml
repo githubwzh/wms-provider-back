@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.common.tool:tool-aop:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/common/tool/tool-aop/1.0-SNAPSHOT/tool-aop-1.0-20140530.135744-12.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/common/tool/tool-aop/1.0-SNAPSHOT/tool-aop-1.0-20140530.135744-12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/common/tool/tool-aop/1.0-SNAPSHOT/tool-aop-1.0-20140530.135744-12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

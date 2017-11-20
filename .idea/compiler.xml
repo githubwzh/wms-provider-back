@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wms-rf-common" />
+        <module name="wms-rf-domain" />
+        <module name="wms-rf-manager" />
+        <module name="wms-rf-remote" />
+        <module name="wms-rf-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wms-rf" target="1.6" />
+      <module name="wms-rf-common" target="1.6" />
+      <module name="wms-rf-domain" target="1.6" />
+      <module name="wms-rf-manager" target="1.6" />
+      <module name="wms-rf-remote" target="1.6" />
+      <module name="wms-rf-service" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

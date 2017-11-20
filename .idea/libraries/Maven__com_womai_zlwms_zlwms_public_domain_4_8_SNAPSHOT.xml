@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.womai.zlwms:zlwms-public-domain:4.8-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/zlwms/zlwms-public-domain/4.8-SNAPSHOT/zlwms-public-domain-4.8-20171120.042526-12.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/zlwms/zlwms-public-domain/4.8-SNAPSHOT/zlwms-public-domain-4.8-20171120.042526-12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/womai/zlwms/zlwms-public-domain/4.8-SNAPSHOT/zlwms-public-domain-4.8-20171120.042526-12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
